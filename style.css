@@ -1,0 +1,234 @@
+
+:root {
+  --primary: #087568;
+  --primary-dark: #07574f;
+  --mint: #e7f5f1;
+  --ink: #18332f;
+  --muted: #667873;
+  --paper: #ffffff;
+  --surface: #f5f9f7;
+  --line: #e1ebe6;
+  --radius: 20px;
+  --shadow: 0 16px 45px rgba(22, 69, 59, 0.09);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 95px; }
+body {
+  margin: 0;
+  font-family: "DM Sans", sans-serif;
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.7;
+}
+a { color: inherit; text-decoration: none; }
+button, input, select { font: inherit; }
+img { display: block; max-width: 100%; }
+.container { width: min(1160px, calc(100% - 44px)); margin-inline: auto; }
+
+.topbar { background: var(--primary-dark); color: #fff; font-size: 12px; }
+.topbar-inner { min-height: 38px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.topbar a { font-weight: 700; }
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(255,255,255,.96);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+.nav { min-height: 83px; display: flex; align-items: center; justify-content: space-between; gap: 25px; }
+.brand { display: inline-flex; align-items: center; gap: 11px; flex-shrink: 0; }
+.brand-icon {
+  display: grid;
+  place-items: center;
+  width: 45px;
+  height: 45px;
+  background: var(--primary);
+  color: white;
+  border-radius: 14px;
+  font-size: 26px;
+}
+.brand-copy { display: grid; line-height: 1.3; }
+.brand-copy strong { font: 800 22px "Manrope", sans-serif; letter-spacing: 1.4px; }
+.brand-copy small { margin-top: 4px; font-size: 9px; font-weight: 700; letter-spacing: 1.1px; }
+nav { display: flex; align-items: center; gap: 27px; font-size: 13px; font-weight: 600; }
+nav > a:not(.nav-cta):hover, .text-link:hover { color: var(--primary); }
+.nav-cta { background: var(--primary); color: white; padding: 12px 17px; border-radius: 9px; }
+.nav-cta:hover, .btn-primary:hover { background: var(--primary-dark); }
+.menu-toggle { display: none; border: 0; background: transparent; color: var(--ink); font-size: 26px; cursor: pointer; }
+
+.hero { overflow: hidden; padding: 80px 0 82px; background: linear-gradient(120deg, #f4faf7 0%, #fff 72%); }
+.hero-grid { display: grid; grid-template-columns: 1fr .94fr; gap: 62px; align-items: center; }
+.eyebrow { display: inline-flex; align-items: center; gap: 9px; color: var(--primary); font-size: 10px; letter-spacing: 1.6px; font-weight: 800; }
+.live-dot { width: 7px; height: 7px; border-radius: 50%; background: #35a889; }
+h1, h2, h3, p { margin-top: 0; }
+h1, h2, h3 { font-family: "Manrope", sans-serif; }
+h1 { font-size: clamp(42px, 5vw, 65px); line-height: 1.12; letter-spacing: -2.6px; margin: 22px 0; font-weight: 800; }
+h1 span, h2 span { color: var(--primary); }
+.hero-description { max-width: 500px; color: var(--muted); font-size: 15px; line-height: 1.9; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin: 28px 0 32px; }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 12px; border-radius: 10px; padding: 14px 20px; border: 1px solid transparent; font-weight: 700; font-size: 13px; cursor: pointer; transition: .2s ease; }
+.btn-primary { background: var(--primary); color: white; }
+.btn-outline { background: white; color: var(--ink); border-color: #dce7e2; }
+.btn-outline:hover { border-color: var(--primary); color: var(--primary); }
+.hero-trust { display: flex; align-items: center; gap: 12px; }
+.trust-icon { width: 39px; height: 39px; border-radius: 12px; display: grid; place-items: center; background: var(--mint); color: var(--primary); font-size: 23px; }
+.hero-trust div { display: grid; line-height: 1.5; }
+.hero-trust strong { font-size: 12px; }
+.hero-trust small { color: var(--muted); font-size: 11px; }
+
+.hero-visual { position: relative; padding: 0 0 18px 14px; }
+.hero-image { height: 445px; border-radius: 48% 48% 22px 22px; overflow: hidden; position: relative; background: #d8e9e2; }
+.hero-image > img { width: 100%; height: 100%; object-fit: cover; }
+.image-shade { position: absolute; inset: 0; background: linear-gradient(0deg, rgba(9, 47, 39, .64), transparent 53%); }
+.image-caption { position: absolute; bottom: 24px; left: 24px; display: flex; gap: 12px; align-items: center; color: white; }
+.caption-symbol { display: grid; place-items: center; width: 42px; height: 42px; border-radius: 12px; background: var(--primary); font-size: 24px; }
+.image-caption div { display: grid; line-height: 1.6; }
+.image-caption strong { font: 700 15px "Manrope", sans-serif; }
+.image-caption small { font-size: 11px; opacity: .85; }
+.floating-card { position: absolute; top: 58px; left: -22px; display: flex; align-items: center; gap: 12px; background: white; padding: 15px 19px; border-radius: 14px; box-shadow: var(--shadow); }
+.floating-icon { display: grid; place-items: center; background: var(--mint); color: var(--primary); border-radius: 11px; width: 39px; height: 39px; font-size: 24px; }
+.floating-card div { display: grid; line-height: 1.5; }
+.floating-card strong { font-size: 12px; }
+.floating-card small { font-size: 10px; color: var(--muted); }
+.hero-decoration { position: absolute; z-index: -1; right: -26px; bottom: -10px; width: 120px; height: 120px; border: 18px solid #d9eee5; border-radius: 50%; }
+
+.quick-info { border-block: 1px solid var(--line); background: white; }
+.info-grid { display: grid; grid-template-columns: repeat(3, 1fr); padding-block: 26px; }
+.info-item { display: flex; align-items: center; gap: 14px; padding: 0 22px; border-right: 1px solid var(--line); }
+.info-item:first-child { padding-left: 0; }
+.info-item:last-child { border-right: 0; }
+.info-icon { flex-shrink: 0; width: 44px; height: 44px; display: grid; place-items: center; border-radius: 13px; color: var(--primary); background: var(--mint); font-size: 23px; }
+.info-item div { display: grid; line-height: 1.7; }
+.info-item small { font-size: 9px; letter-spacing: .9px; color: var(--muted); font-weight: 700; }
+.info-item strong { font-size: 12px; }
+
+.section { padding: 94px 0; }
+.about-grid, .pharmacy-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 85px; align-items: center; }
+.about-visual, .pharmacy-visual { position: relative; }
+.about-visual > img { width: 100%; height: 410px; object-fit: cover; border-radius: var(--radius); background: var(--mint); }
+.about-note, .pharmacy-label { position: absolute; right: -20px; bottom: 22px; background: white; box-shadow: var(--shadow); padding: 17px 20px; display: flex; align-items: center; gap: 12px; border-radius: 13px; }
+.about-note > span, .pharmacy-label > span { color: var(--primary); font-size: 28px; }
+.about-note div, .pharmacy-label div { display: grid; line-height: 1.6; }
+.about-note strong, .pharmacy-label strong { font-size: 12px; }
+.about-note small, .pharmacy-label small { font-size: 10px; color: var(--muted); }
+.section-copy h2, .pharmacy-copy h2, .section-heading h2, .appointment-copy h2 { font-size: clamp(29px, 3.2vw, 42px); line-height: 1.25; letter-spacing: -1.4px; margin: 16px 0; }
+.section-copy p, .pharmacy-copy p { color: var(--muted); font-size: 14px; line-height: 1.95; }
+.text-link { display: inline-flex; gap: 9px; align-items: center; color: var(--primary); font-weight: 700; font-size: 13px; margin-top: 9px; }
+
+.services { background: var(--surface); }
+.section-heading { text-align: center; max-width: 660px; margin: 0 auto 42px; }
+.section-heading h2 { margin-bottom: 12px; }
+.section-heading > p { color: var(--muted); font-size: 14px; }
+.service-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.service-card { padding: 30px 26px; background: white; border: 1px solid var(--line); border-radius: 16px; transition: transform .2s, box-shadow .2s; }
+.service-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+.service-icon { width: 52px; height: 52px; display: grid; place-items: center; border-radius: 15px; background: var(--mint); color: var(--primary); font-size: 27px; }
+.service-card h3 { font-size: 17px; margin: 22px 0 10px; }
+.service-card p { min-height: 74px; font-size: 13px; color: var(--muted); line-height: 1.8; }
+.service-card a { color: var(--primary); font-size: 12px; font-weight: 700; }
+
+.pharmacy-grid { gap: 75px; }
+.check-list { list-style: none; margin: 23px 0; padding: 0; display: grid; gap: 13px; font-size: 13px; font-weight: 600; }
+.check-list li { display: flex; gap: 11px; align-items: center; }
+.check-list span { display: grid; place-items: center; width: 22px; height: 22px; background: var(--mint); color: var(--primary); border-radius: 50%; font-size: 12px; }
+.pharmacy-visual > img { width: 100%; height: 390px; object-fit: cover; border-radius: var(--radius); background: var(--mint); }
+.pharmacy-label { right: auto; left: -20px; }
+.small-note { display: block; font-size: 10px; line-height: 1.7; color: var(--muted); margin-top: 16px; }
+
+.appointment { background: var(--primary-dark); color: white; }
+.appointment-grid { display: grid; grid-template-columns: .9fr 1fr; gap: 90px; align-items: center; }
+.light-eyebrow { color: #a9e1d2; }
+.appointment-copy h2 { font-size: clamp(34px, 4vw, 48px); }
+.appointment-copy > p { color: #d0e4dd; font-size: 14px; line-height: 1.9; }
+.phone-link { display: block; font-size: 24px; font-family: "Manrope", sans-serif; font-weight: 800; margin: 26px 0 10px; }
+.appointment-copy > small { display: block; color: #c1d9d1; font-size: 11px; }
+.appointment-form { padding: 32px; background: white; color: var(--ink); border-radius: 20px; }
+.appointment-form h3 { font-size: 23px; margin-bottom: 5px; }
+.appointment-form > p { font-size: 12px; color: var(--muted); margin-bottom: 22px; }
+.appointment-form label { display: block; font-size: 12px; font-weight: 700; margin: 13px 0 6px; }
+.appointment-form input, .appointment-form select { width: 100%; padding: 12px 13px; border: 1px solid #dce7e2; background: #fbfdfc; color: var(--ink); border-radius: 8px; outline: none; font-size: 13px; }
+.appointment-form input:focus, .appointment-form select:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(8,117,104,.1); }
+.submit-btn { width: 100%; margin-top: 20px; }
+.form-note { display: block; font-size: 10px; line-height: 1.7; color: var(--muted); margin-top: 13px; }
+
+.contact { background: var(--surface); }
+.contact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.contact-card { background: white; border: 1px solid var(--line); border-radius: 15px; padding: 26px; }
+.contact-icon { display: grid; place-items: center; width: 43px; height: 43px; border-radius: 12px; background: var(--mint); color: var(--primary); font-size: 24px; }
+.contact-card h3 { font-size: 17px; margin: 18px 0 9px; }
+.contact-card p { color: var(--muted); font-size: 12px; line-height: 1.9; min-height: 70px; }
+.contact-number { display: block; color: var(--primary); font-weight: 800; font-size: 17px; margin: 8px 0; }
+.map-frame { margin-top: 28px; overflow: hidden; border-radius: 16px; border: 1px solid var(--line); background: #e5eeea; }
+.map-frame iframe { display: block; width: 100%; height: 350px; border: 0; }
+
+.footer { background: #103a33; color: white; padding-top: 36px; }
+.footer-main { display: flex; align-items: center; justify-content: space-between; gap: 25px; padding-bottom: 30px; }
+.footer-brand .brand-icon { background: #fff; color: var(--primary); }
+.footer-main > p { color: #c5dcd5; font-size: 11px; margin: 0; }
+.footer-main > a:last-child { font-size: 12px; font-weight: 700; }
+.footer-bottom { border-top: 1px solid rgba(255,255,255,.14); display: flex; justify-content: space-between; gap: 20px; padding-block: 18px; font-size: 10px; color: #c5dcd5; }
+
+.whatsapp-float { position: fixed; z-index: 30; right: 22px; bottom: 22px; width: 57px; height: 57px; display: grid; place-items: center; border-radius: 50%; background: #20bd67; color: white; box-shadow: 0 8px 25px rgba(0,0,0,.2); transition: transform .2s; }
+.whatsapp-float:hover { transform: scale(1.07); }
+.whatsapp-float svg { width: 30px; height: 30px; }
+
+@media (max-width: 900px) {
+  .hero-grid { gap: 35px; }
+  .hero-image { height: 390px; }
+  nav { gap: 15px; }
+  .about-grid, .pharmacy-grid { gap: 45px; }
+  .appointment-grid { gap: 40px; }
+  .info-item { padding-inline: 12px; }
+}
+
+@media (max-width: 720px) {
+  .container { width: min(100% - 32px, 540px); }
+  .topbar-inner { justify-content: center; padding-block: 8px; text-align: center; }
+  .topbar-inner > span { display: none; }
+  .nav { min-height: 72px; }
+  .brand-icon { width: 39px; height: 39px; }
+  .brand-copy strong { font-size: 19px; }
+  .brand-copy small { font-size: 8px; }
+  .menu-toggle { display: block; }
+  nav { display: none; position: absolute; top: 72px; left: 0; right: 0; padding: 20px 22px 25px; background: white; border-bottom: 1px solid var(--line); box-shadow: var(--shadow); align-items: stretch; flex-direction: column; gap: 17px; }
+  nav.open { display: flex; }
+  .nav-cta { text-align: center; }
+  .hero { padding: 52px 0 45px; }
+  .hero-grid { grid-template-columns: 1fr; gap: 32px; }
+  h1 { font-size: clamp(42px, 11vw, 56px); letter-spacing: -2px; }
+  .hero-description { font-size: 14px; }
+  .hero-visual { padding-left: 10px; padding-right: 8px; margin-top: 6px; }
+  .hero-image { height: 340px; border-radius: 43% 43% 20px 20px; }
+  .floating-card { top: 42px; left: -4px; padding: 11px; }
+  .hero-decoration { right: -5px; }
+  .info-grid { grid-template-columns: 1fr; padding-block: 10px; }
+  .info-item, .info-item:first-child { padding: 13px 0; border-right: 0; border-bottom: 1px solid var(--line); }
+  .info-item:last-child { border-bottom: 0; }
+  .section { padding: 65px 0; }
+  .about-grid, .pharmacy-grid, .appointment-grid { grid-template-columns: 1fr; gap: 38px; }
+  .about-visual > img { height: 320px; }
+  .about-note { right: -5px; }
+  .section-copy h2, .pharmacy-copy h2, .section-heading h2 { font-size: 32px; }
+  .service-grid, .contact-grid { grid-template-columns: 1fr; }
+  .service-card p, .contact-card p { min-height: 0; }
+  .service-card { padding: 24px; }
+  .pharmacy-grid { display: flex; flex-direction: column; }
+  .pharmacy-copy { order: 1; }
+  .pharmacy-visual { order: 0; width: 100%; }
+  .pharmacy-visual > img { height: 300px; }
+  .pharmacy-label { left: -5px; }
+  .appointment-form { padding: 24px 19px; }
+  .phone-link { font-size: 22px; }
+  .contact-card { padding: 23px; }
+  .map-frame iframe { height: 290px; }
+  .footer-main { flex-direction: column; align-items: flex-start; gap: 17px; }
+  .footer-bottom { flex-direction: column; gap: 7px; }
+  .whatsapp-float { right: 15px; bottom: 15px; width: 52px; height: 52px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
+}
